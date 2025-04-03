@@ -1,0 +1,1 @@
+This project is a FastAPI-based API that allows users to upload CSV files, store them in a database, and query them using Retrieval-Augmented Generation (RAG). The system is designed to handle file uploads, efficient data storage, and LLM-based queri
