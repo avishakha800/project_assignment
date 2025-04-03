@@ -1,0 +1,42 @@
+CSV RAG API: Key Approach and Features
+
+Architecture: A FastAPI-based REST API service for handling CSV data with integrated RAG (Retrieval-Augmented Generation) capabilities using OpenAI's GPT-3.5 Turbo.
+Core Functionality:
+
+CSV file uploading and management from multiple sources (direct upload, disk locations, project directories)
+Natural language querying of CSV data using OpenAI's API
+In-memory storage of CSV metadata and content for quick access
+
+
+Key Endpoints:
+
+/upload/ - Upload a CSV file directly
+/upload-from-disk/ - Load a CSV from a local file path
+/upload-from-project/ - Batch import CSVs from a project directory
+/chat/ - Query uploaded CSV data using natural language
+/csvs/ - List and manage uploaded CSV files
+
+
+Data Processing:
+
+CSV files are parsed with pandas
+Data is stored as dictionaries for easy access and querying
+Limited context (first 10 rows) is used for OpenAI prompting
+
+
+Implementation Approach:
+
+Simple in-memory storage (no persistent database)
+CORS enabled for cross-origin requests
+Straightforward error handling and validation
+OpenAI integration through REST API
+
+
+Technical Considerations:
+
+Uses Pydantic models for request/response validation
+Implements proper file handling with cleanup
+Includes health check endpoint for monitoring
+
+
+
